@@ -310,7 +310,7 @@ MonoBehaviour:
   moveSpeed: 10
   targetSpeed: 30
   acceleration: 2
-  decceleration: 1.5
+  decceleration: 2
   power: 2
   jumpForce: 3.5
   jumpCutForce: 2
