@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
-    /*
     [SerializeField] private Image healthFill;
     [SerializeField] private TextMeshProUGUI healthText;
-    [SerializeField] private Character character;
+    [SerializeField] private CombatManager character;
 
     void OnEnable ()
     {
@@ -23,10 +22,9 @@ public class HealthBarUI : MonoBehaviour
     {
         OnUpdateHealth();
     }
-    void OnUpdateHealth ()
+    public void OnUpdateHealth ()
     {
         healthFill.fillAmount = character.GetHealthPercentage();
         healthText.text = character.CurHp + " / " + character.MaxHp;
     }
-    */
 }

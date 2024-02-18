@@ -232,7 +232,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1236705277
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15341,6 +15341,7 @@ GameObject:
   - component: {fileID: 394445250}
   - component: {fileID: 394445249}
   - component: {fileID: 394445248}
+  - component: {fileID: 394445253}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -15470,6 +15471,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &394445253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394445246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9524536e9f3fb104baf25346c0d24917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFill: {fileID: 1595497056}
+  healthText: {fileID: 1325853037}
+  character: {fileID: 1317772291}
 --- !u!1 &396191435
 GameObject:
   m_ObjectHideFlags: 0
@@ -15619,6 +15635,8 @@ GameObject:
   m_Component:
   - component: {fileID: 543460182}
   - component: {fileID: 543460181}
+  - component: {fileID: 543460183}
+  - component: {fileID: 543460184}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -15670,7 +15688,7 @@ Transform:
   m_GameObject: {fileID: 543460180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.03, y: -1.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15678,6 +15696,37 @@ Transform:
   - {fileID: 1562513473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &543460183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543460180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b820a08dfe2433644ad7864695ef65ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 10, y: -1.22, z: 0}
+  moveSpeed: 2
+--- !u!114 &543460184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543460180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e118c19e7dd34485ea865f4bd6657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurHp: 10
+  MaxHp: 10
+  IsPlayer: 0
+  canKnockback: 0
+  rb: {fileID: 0}
 --- !u!1 &707840519
 GameObject:
   m_ObjectHideFlags: 0
@@ -15801,8 +15850,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8468818367053590139, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1317772291}
   m_SourcePrefab: {fileID: 100100000, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
+--- !u!1 &1317772284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8468818367053590139, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
+  m_PrefabInstance: {fileID: 1107810864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1317772289 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6317271160062886277, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
+  m_PrefabInstance: {fileID: 1107810864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1317772291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317772284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1e118c19e7dd34485ea865f4bd6657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurHp: 100
+  MaxHp: 100
+  IsPlayer: 1
+  canKnockback: 1
+  rb: {fileID: 1317772289}
 --- !u!1 &1325853035
 GameObject:
   m_ObjectHideFlags: 0
@@ -16008,7 +16087,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1185489939
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 865554995, guid: 8d3d20c18fde81c4a9203d68fbc9395a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16107,7 +16186,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 907038337
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: affad5c3d4a4e594c84a2016080c1d40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16134,6 +16213,7 @@ GameObject:
   - component: {fileID: 1562513476}
   - component: {fileID: 1562513475}
   - component: {fileID: 1562513474}
+  - component: {fileID: 1562513479}
   m_Layer: 0
   m_Name: HealthBar
   m_TagString: Untagged
@@ -16263,6 +16343,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1562513479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562513472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9524536e9f3fb104baf25346c0d24917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthFill: {fileID: 1712624568}
+  healthText: {fileID: 396191437}
+  character: {fileID: 543460184}
 --- !u!1 &1595497054
 GameObject:
   m_ObjectHideFlags: 0

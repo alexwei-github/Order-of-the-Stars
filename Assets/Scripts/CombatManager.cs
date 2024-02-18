@@ -1,30 +1,35 @@
+using System.ComponentModel;
+using System.Timers;
+using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class CombatManager : MonoBehaviour
 {
-
-    /*
     public int CurHp;
     public int MaxHp;
     public bool IsPlayer;
-    public uint  ui;
-
+    public bool canKnockback;
+    public Rigidbody2D rb;
     public event UnityAction OnHealthChange;
-    public static event UnityAction<Character> OnDie;
+    public static event UnityAction<CombatManager> OnDie;
 
-    public void TakeDamage (int damageToTake){
+    public void TakeDamage (int damageToTake, Vector3 enemyPos, int knockbackAmount){
         CurHp -= damageToTake;
 
         OnHealthChange?.Invoke();
+
+        knockback(enemyPos,knockbackAmount);
 
         if(CurHp <= 0)
             Die();
     }
 
-    void Die(){
+    public void Die(){
         OnDie?.Invoke(this);
         //Destroy(gameObject);
         SceneManager.LoadScene(0);
@@ -44,12 +49,10 @@ public class CombatManager : MonoBehaviour
         return (float)CurHp/(float)MaxHp;
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void knockback(Vector3 enemyPos, int knockbackAmount){
+        if (canKnockback){
+            Debug.Log(knockbackAmount*(transform.position - enemyPos));
+            rb.AddForce(new Vector2(knockbackAmount*(transform.position.x - enemyPos.x),knockbackAmount*(transform.position.y - enemyPos.y + 1)),ForceMode2D.Impulse);
+        }
     }
-
-    */
 }

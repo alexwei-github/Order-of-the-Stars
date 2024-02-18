@@ -108,4 +108,5 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, -0.01f, 0), Vector2.down, 0.2f);
         return hit.collider != null;
     }
+
 }
