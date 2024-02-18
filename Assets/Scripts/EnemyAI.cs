@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    /*
     public Vector3 targetPosition;
     private Vector3 startPosition;
 
@@ -40,4 +41,5 @@ public class Enemy : MonoBehaviour
             collision.gameObject.GetComponent<PlayerMovement>().GameOver();
         }
     }
+    */
 }
