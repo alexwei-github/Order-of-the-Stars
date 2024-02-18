@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
         anim = GetComponent<Animator>();
+        Physics2D.queriesHitTriggers = false;
     }
 
     void Update(){
