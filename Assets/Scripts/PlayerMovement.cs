@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         }
         float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelerationRate, power) * Mathf.Sign(speedDifference);
         //slows you down in air
-        if(isGrounded){
+        if(IsGrounded()){
             rb.AddForce(movement * Vector2.right);
         }
         else{
@@ -57,9 +57,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if(isGrounded && moveInput.y > 0.1f) 
+        if(IsGrounded() && moveInput.y > 0.1f) 
         {
-            
             Jump();
         }
         //jump determined by how long you hold up
@@ -85,19 +84,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void jumpCut(){
-        if(rb.velocity.y > 0 && !isGrounded){
+        if(rb.velocity.y > 0 && !IsGrounded()){
             rb.AddForce(Vector2.down * rb.velocity.y * (1 / jumpCutForce), ForceMode2D.Impulse);    
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.layer == 6){
-            isGrounded = true;
-        }
-    }
-    void OnTriggerExit2D(Collider2D collision){
-        if (collision.gameObject.layer == 6){
-            isGrounded = false;
-        }
+    bool IsGrounded(){
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, -0.01f, 0), Vector2.down, 0.5f);
+        return hit.collider != null;
     }
 }
