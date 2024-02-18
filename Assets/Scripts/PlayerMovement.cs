@@ -22,10 +22,13 @@ public class PlayerMovement : MonoBehaviour
     private float lastJumpTime;
     public float jumpCutForce;
     public float airRes;
+    public float gravityScaleMult;
+    private float gravityScale;
 
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
+        gravityScale = rb.gravityScale;
     }
 
     void Update(){
@@ -45,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
             accelerationRate = decceleration;
         }
         float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelerationRate, power) * Mathf.Sign(speedDifference);
+        //slows you down in air
         if(isGrounded){
             rb.AddForce(movement * Vector2.right);
         }
@@ -58,9 +62,16 @@ public class PlayerMovement : MonoBehaviour
             
             Jump();
         }
-
+        //jump determined by how long you hold up
         if(rb.velocity.y > 0 && moveInput.y < 0.1f){
             jumpCut();
+        }
+        //makes gravity bigger when u fall
+        if( rb.velocity.y < 0){
+            rb.gravityScale = gravityScale * gravityScaleMult;
+        }
+        else{
+            rb.gravityScale = gravityScale / gravityScaleMult;
         }
         
     }
@@ -70,7 +81,6 @@ public class PlayerMovement : MonoBehaviour
         //lastGroundedTime = 0;
         //lastJumpTime = 0;
         isJumping = true;
-        
 
     }
 
