@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed;
+    private Animator anim;
+    public float moveSpeed; 
     public float targetSpeed;
     private Vector2 moveInput;
 
@@ -29,12 +30,23 @@ public class PlayerMovement : MonoBehaviour
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
+        anim = GetComponent<Animator>();
     }
 
     void Update(){
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
+        //flipping player left and right
+        if(moveInput.x > 0.1f){
+            transform.localScale = Vector3.one;
+        }
+        if(moveInput.x < -0.1f){
+            transform.localScale = new Vector3(-1,1,1);
+        }
+
+        anim.SetBool("run", Mathf.Abs(moveInput.x) > 0.1f);
+        anim.SetBool("grounded", IsGrounded());
     }
 
     private void FixedUpdate(){
@@ -74,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
+
 
     private void Jump(){
         rb.AddForce(new Vector2(0f, moveInput.y * jumpForce), ForceMode2D.Impulse);
