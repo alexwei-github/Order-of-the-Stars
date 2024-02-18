@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     public float gravityScaleMult;
     private float gravityScale;
 
-
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
