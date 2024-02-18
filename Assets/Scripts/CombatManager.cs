@@ -53,6 +53,13 @@ public class CombatManager : MonoBehaviour
         if (canKnockback){
             //Debug.Log(knockbackAmount*(transform.position - enemyPos));
             rb.AddForce(new Vector2(knockbackAmount*(transform.position.x - enemyPos.x),knockbackAmount*(transform.position.y - enemyPos.y + 1)),ForceMode2D.Impulse);
+            StartCoroutine(cannotMove());
         }
+    }
+
+    IEnumerator cannotMove(){
+        PlayerMovement.instance.canMove = false;
+        yield return new WaitForSeconds(1f);
+        PlayerMovement.instance.canMove = true;
     }
 }

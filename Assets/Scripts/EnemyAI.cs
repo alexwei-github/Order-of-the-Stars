@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public Vector3 targetPosition;
     private Vector3 startPosition;
+    public int knockbackAmount;
 
     public float moveSpeed;
     private bool movingToTargetPos;
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("Player")){
-            collision.gameObject.GetComponent<CombatManager>().TakeDamage(5, transform.position, 50);
+            collision.gameObject.GetComponent<CombatManager>().TakeDamage(5, transform.position, knockbackAmount);
         }
     }
 }

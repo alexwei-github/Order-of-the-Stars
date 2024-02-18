@@ -26,11 +26,21 @@ public class PlayerMovement : MonoBehaviour
     public float gravityScaleMult;
     private float gravityScale;
 
+    public static PlayerMovement instance;
+    public bool canMove = true; 
+
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
         anim = GetComponent<Animator>();
         Physics2D.queriesHitTriggers = false;
+
+        if(instance == null){
+            instance = this;
+        }
+        else{
+            Destroy(gameObject);
+        }
     }
 
     void Update(){
@@ -61,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
         float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelerationRate, power) * Mathf.Sign(speedDifference);
         //slows you down in air
+        if(canMove){
         if(IsGrounded()){
             rb.AddForce(movement * Vector2.right);
         }
@@ -86,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else{
             rb.gravityScale = gravityScale;
+        }
         }
         
     }
