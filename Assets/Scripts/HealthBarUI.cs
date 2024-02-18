@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class HealthBarUI : MonoBehaviour
 {
+    /*
     [SerializeField] private Image healthFill;
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private Character character;
@@ -27,4 +28,5 @@ public class HealthBarUI : MonoBehaviour
         healthFill.fillAmount = character.GetHealthPercentage();
         healthText.text = character.CurHp + " / " + character.MaxHp;
     }
+    */
 }

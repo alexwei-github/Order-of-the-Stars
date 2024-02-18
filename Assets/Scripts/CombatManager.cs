@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CombatManager : MonoBehaviour
 {
 
+    /*
     public int CurHp;
     public int MaxHp;
     public bool IsPlayer;
@@ -50,5 +51,5 @@ public class CombatManager : MonoBehaviour
         
     }
 
-    
+    */
 }
