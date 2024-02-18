@@ -15474,30 +15474,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1528818183518178627, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: jumpForce
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561295688792894854, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Size.x
-      value: 1.7255237
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561295688792894854, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Size.y
-      value: 2.023011
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561295688792894854, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: efcfae337a4c61b4399f7d36c251a822, type: 2}
-    - target: {fileID: 1561295688792894854, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0058357716
-      objectReference: {fileID: 0}
-    - target: {fileID: 1561295688792894854, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.0927511
-      objectReference: {fileID: 0}
     - target: {fileID: 3883569193327231485, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -15537,26 +15513,6 @@ PrefabInstance:
     - target: {fileID: 3883569193327231485, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5646879436220315094, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317271160062886277, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LinearDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317271160062886277, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317271160062886277, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317271160062886277, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_GravityScale
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8468818367053590139, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_Name
