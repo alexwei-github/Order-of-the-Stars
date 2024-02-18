@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 6726941994841812432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.06, z: 0}
-  m_LocalScale: {x: 1.548, y: 1.548, z: 1.548}
+  m_LocalPosition: {x: -0.2, y: 1.168, z: 0}
+  m_LocalScale: {x: 0.32218802, y: 0.32218802, z: 0.32218802}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3883569193327231485}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -1185489939
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 165981122, guid: 76d3cb64bc5834e4ea9cf37c1991f814, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9009323370e409b408c0a8b06cdec6d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 7365406871227018717}
   - component: {fileID: 1528818183518178627}
   - component: {fileID: 1561295688792894854}
+  - component: {fileID: 1905948856642256513}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -310,7 +311,7 @@ MonoBehaviour:
   acceleration: 2
   decceleration: 1.5
   power: 2
-  jumpForce: 2
+  jumpForce: 3.5
   jumpCutForce: 2
   airRes: 2
   gravityScaleMult: 2
@@ -349,3 +350,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0058357716, y: 1.0927511}
   m_Size: {x: 1.7255237, y: 2.023011}
   m_Direction: 0
+--- !u!95 &1905948856642256513
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8468818367053590139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d32b7dca8b9aa1145ac773e4c027745b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -67,6 +67,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             rb.AddForce((movement/airRes) * Vector2.right );
         }
+        if(Mathf.Abs(rb.velocity.x) < 0.5f){
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
 
 
         if(IsGrounded() && moveInput.y > 0.1f) 
@@ -82,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             rb.gravityScale = gravityScale * gravityScaleMult;
         }
         else{
-            rb.gravityScale = gravityScale / gravityScaleMult;
+            rb.gravityScale = gravityScale;
         }
         
     }
