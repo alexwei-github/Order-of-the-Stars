@@ -5,15 +5,30 @@ using UnityEngine;
 public class EnemyFirer : MonoBehaviour
 {
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public Transform firepoint;
+    public GameObject bullet;
+    public float fireRate;
+    public float damage;
+    public float cooldown;
+    private float timer;
+
+    void Start(){
+        timer = cooldown;
+    }
+    void Update(){
+        if(timer>0){
+            timer -= Time.deltaTime;
+        }else{
+            Fire();
+            timer = cooldown;
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Fire(){
+        Instantiate(bullet,firepoint.position,firepoint.rotation);
     }
+
+
+
 }
