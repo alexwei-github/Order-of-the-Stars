@@ -25,6 +25,11 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
+        //make sure crab does not go out of bounds
+        if (transform.position.y >= 38){
+            transform.position = new Vector2(transform.position.x, 35); 
+        }
+
         timePassed += Time.deltaTime;
         if(timePassed > 5f)
         {
