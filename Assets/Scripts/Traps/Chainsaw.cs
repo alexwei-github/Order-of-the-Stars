@@ -4,30 +4,51 @@ using UnityEngine;
 
 public class Chainsaw : MonoBehaviour
 {
-    public float speed;
-    public float xDist;
-    public Rigidbody2D rb;
+    public Vector3 targetPosition;
+    private Vector3 startPosition;
 
-    private Vector2 targetPos;
-    private Vector2 startPos;
-    private Vector2 currentPos;
-
-    void Start(){
-        startPos = transform.position;
-        targetPos = new Vector2(startPos.x + xDist, startPos.y);
+    public float moveSpeed;
+    private bool movingToTargetPos;
+    private GameObject player;
+    // Start is called before the first frame update
+    void Start()
+    {
+        startPosition = transform.position;
+        movingToTargetPos = true;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void Update(){
-        currentPos = transform.position;
-        rb.velocity = new Vector2(Mathf.Sign(targetPos.x - currentPos.x) * speed, 0);
-        if(currentPos == targetPos){
-            targetPos = startPos;
-            startPos = currentPos;
+    // Update is called once per frame
+    void Update()
+    {
+        if(movingToTargetPos==true){
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            if(transform.position == targetPosition){
+                movingToTargetPos = false;
+            }
+        }
+        else{
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, moveSpeed * Time.deltaTime);
+
+            if(transform.position == startPosition){
+                movingToTargetPos = true;
+            }
         }
     }
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player"){
-            Debug.Log("get sent back to checkpoint");
+
+            //other.transform.position = CheckPointManager.instance.checkPointPos;
+            StartCoroutine(Stop());
         }
+    }
+
+    IEnumerator Stop(){
+        PlayerMovement.instance.canMove = false;
+        PlayerMovement.instance.rb.transform.position = CheckPointManager.instance.checkPointPos;
+        PlayerMovement.instance.rb.velocity = new Vector2(0,0);
+        yield return new WaitForSeconds(1f);
+        PlayerMovement.instance.canMove = true;
     }
 }

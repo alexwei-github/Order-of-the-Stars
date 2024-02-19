@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class CheckPointManager : MonoBehaviour
 {
-    Vector2 checkPointPos;
-    public CheckPointManager instance;
+    public Vector2 checkPointPos {get; private set;}
+    public static CheckPointManager instance;
 
 
     private void Start(){
         checkPointPos = transform.position;
+    }
+
+    void Awake(){
+        if(instance == null){
+            instance = this;
+        }
+        else{
+            Destroy(gameObject);
+        }
     }
 
     public void UpdateCheckpoint(Vector2 pos){

@@ -54,9 +54,10 @@ public class PlayerMovement : MonoBehaviour
         if(moveInput.x < -0.1f){
             transform.localScale = new Vector3(-1,1,1);
         }
-
+        if(canMove){
         anim.SetBool("run", Mathf.Abs(moveInput.x) > 0.1f);
         anim.SetBool("grounded", IsGrounded());
+        }
     }
 
     private void FixedUpdate(){

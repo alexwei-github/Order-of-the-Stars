@@ -52,6 +52,7 @@ public class CombatManager : MonoBehaviour
     public void knockback(Vector3 enemyPos, int knockbackAmount){
         if (canKnockback){
             //Debug.Log(knockbackAmount*(transform.position - enemyPos));
+            rb.velocity = new Vector2(0,0);
             rb.AddForce(new Vector2(knockbackAmount*(transform.position.x - enemyPos.x),knockbackAmount*(transform.position.y - enemyPos.y + 1)),ForceMode2D.Impulse);
             StartCoroutine(cannotMove());
         }
