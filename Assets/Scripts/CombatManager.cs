@@ -34,7 +34,8 @@ public class CombatManager : MonoBehaviour
         if(IsPlayer)
             SceneManager.LoadScene(0);
         else
-            Destroy(gameObject);
+            StartCoroutine(Death());
+            
     }
 
     public void Heal (int healAmount){
@@ -60,6 +61,10 @@ public class CombatManager : MonoBehaviour
         }
     }
 
+    IEnumerator Death(){
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
     IEnumerator cannotMove(){
         PlayerMovement.instance.canMove = false;
         yield return new WaitForSeconds(1f);

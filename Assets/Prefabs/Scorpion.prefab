@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6958282391208110928}
   - component: {fileID: 7296682594638402202}
   - component: {fileID: 7639007236258433184}
-  - component: {fileID: 5234363162897786809}
+  - component: {fileID: 4837186046052126001}
   m_Layer: 8
   m_Name: Scorpion
   m_TagString: Untagged
@@ -170,7 +170,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 2
+  m_Constraints: 0
 --- !u!114 &7296682594638402202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ CapsuleCollider2D:
   m_Offset: {x: -0.14680842, y: -3.86263e-15}
   m_Size: {x: 0.7063832, y: 1.9999999}
   m_Direction: 0
---- !u!114 &5234363162897786809
+--- !u!114 &4837186046052126001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6301536438625743140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1e118c19e7dd34485ea865f4bd6657, type: 3}
+  m_Script: {fileID: 11500000, guid: 551dd0d2ffba2d54b829bbb7eeb14965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CurHp: 10
@@ -240,6 +240,7 @@ MonoBehaviour:
   IsPlayer: 0
   canKnockback: 0
   rb: {fileID: 0}
+  spriteanimator: {fileID: 5502733530790317998}
 --- !u!1 &8278828691084485838
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 2521100300099336049, guid: b80c6964659706546a9ca0071aed807c, type: 3}
       propertyPath: character
       value: 
-      objectReference: {fileID: 5234363162897786809}
+      objectReference: {fileID: 4837186046052126001}
     - target: {fileID: 8374559278575095201, guid: b80c6964659706546a9ca0071aed807c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
