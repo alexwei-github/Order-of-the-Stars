@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
     private Animator anim;
+    public SpriteRenderer sr;
     public float moveSpeed; 
     public float targetSpeed;
     private Vector2 moveInput;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
         anim = GetComponent<Animator>();
+        //sr = GetComponent<SpriteRenderer>();
         Physics2D.queriesHitTriggers = false;
 
         if(instance == null){
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else{
             anim.SetBool("run", false);
+            anim.SetBool("grounded", true);
         }
 
         //running audio
@@ -87,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         float movement = Mathf.Pow(Mathf.Abs(speedDifference) * accelerationRate, power) * Mathf.Sign(speedDifference);
         //slows you down in air
         if(canMove){
+            sr.color = new Color(1f,1f,1f,1f);
         if(IsGrounded()){
             rb.AddForce(movement * Vector2.right);
         }
@@ -113,6 +117,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             rb.gravityScale = gravityScale;
         }
+        }
+        else{
+            sr.color = new Color(0f,0f,0f,1f);
         }
         
     }
