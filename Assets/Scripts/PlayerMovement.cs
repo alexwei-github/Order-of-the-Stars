@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed; 
     public float targetSpeed;
     private Vector2 moveInput;
+    
+    public AudioSource runSound, jumpSound;
 
     public float acceleration;
     public float decceleration;
@@ -57,6 +59,16 @@ public class PlayerMovement : MonoBehaviour
         if(canMove){
         anim.SetBool("run", Mathf.Abs(moveInput.x) > 0.1f);
         anim.SetBool("grounded", IsGrounded());
+        }
+
+        //movement audio
+        if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && IsGrounded()){
+            runSound.enabled = true;
+            Debug.Log("running");
+        }
+        else
+        {
+            runSound.enabled = false;
         }
     }
 
@@ -109,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
         //lastGroundedTime = 0;
         //lastJumpTime = 0;
         isJumping = true;
-
+        jumpSound.Play();
     }
 
     public void jumpCut(){
