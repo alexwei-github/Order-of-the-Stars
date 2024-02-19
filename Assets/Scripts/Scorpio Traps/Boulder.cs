@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boulder : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collider2D other){
+    private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("Player")){
             StartCoroutine(Stop());
             OpenDoor.instance.transform.position = OpenDoor.instance.currentPos;
