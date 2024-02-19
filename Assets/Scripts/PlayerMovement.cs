@@ -60,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("run", Mathf.Abs(moveInput.x) > 0.1f);
         anim.SetBool("grounded", IsGrounded());
         }
+        else{
+            anim.SetBool("run", false);
+        }
 
         //running audio
         if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && IsGrounded()){

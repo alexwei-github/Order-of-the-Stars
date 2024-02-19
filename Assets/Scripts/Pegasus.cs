@@ -28,14 +28,13 @@ public class Pegasus : MonoBehaviour
     }
 
     IEnumerator Cutscene(){
-        PlayerMovement.instance.canMove = false;
-        PlayerMovement.instance.rb.velocity = new Vector2(0,0);
-        
+        //PlayerMovement.instance.canMove = false;
+        //PlayerMovement.instance.rb.velocity = new Vector2(0,0);
         yield return new WaitForSeconds(3f);
         anim.SetBool("meet", true);
         yield return new WaitForSeconds(2f);
-        PlayerMovement.instance.rb.AddForce(new Vector2(1,0));
-        PlayerMovement.instance.canMove = true;
+        //PlayerMovement.instance.rb.AddForce(new Vector2(1,0));
+        //PlayerMovement.instance.canMove = true;
 
         
     }
