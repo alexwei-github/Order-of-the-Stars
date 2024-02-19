@@ -7,14 +7,24 @@ public class Statue : MonoBehaviour
 {
     public bool inEvergaol;
     public string nextLevelName;
+    public GameObject button;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(inEvergaol == true){
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
         else{
-            SceneManager.LoadScene(nextLevelName);
+            button.SetActive(true);
         }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        button.SetActive(false);
+    }
+
+    public void OnStatueButton(){
+        SceneManager.LoadScene(nextLevelName);
     }
 }
