@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
     private float timer = 0f;
     public SpriteRenderer attackSprite;
     public AudioSource swordSound;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
