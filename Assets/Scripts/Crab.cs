@@ -30,7 +30,7 @@ public class Crab : MonoBehaviour
         {
             if(runOrShoot == true){
                 runOrShoot = false;
-                Shoot();
+                StartCoroutine(WaitShoot());
             }
             else{
                 playerPos = player.position;
@@ -45,7 +45,7 @@ public class Crab : MonoBehaviour
 
             if(transform.position == playerPos){
                 runOrShoot = false;
-                Shoot();
+                StartCoroutine(WaitShoot());
                 timePassed = 0f;
             }
         }
@@ -57,8 +57,13 @@ public class Crab : MonoBehaviour
         }
     }
 
-    private void Shoot(){
-        Debug.Log("Shot");
+    void Shoot(){
         Instantiate(bullet,firepoint.position,firepoint.rotation);
+    }
+    
+    IEnumerator WaitShoot()
+    {
+        yield return new WaitForSeconds (3.0f);
+        Shoot();
     }
 }
