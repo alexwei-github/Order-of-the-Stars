@@ -9,7 +9,7 @@ public class OpenDoor : MonoBehaviour
     public static OpenDoor instance;
 
     void Awake(){
-        currentPos = transform.position;
+        currentPos = door.transform.position;
 
         if(instance == null){
             instance = this;
@@ -25,4 +25,6 @@ public class OpenDoor : MonoBehaviour
         }
 
     }
+
+
 }

@@ -42,13 +42,12 @@ public class Scorpion : MonoBehaviour
             
         }
 
-        if (rb.velocity.x > 0) {
+        if (rb.velocity.x > 0.1f) {
             transform.eulerAngles = new Vector3(0, 0, 90);
             
-        } else if (rb.velocity.x < 0) {
+        } else if (rb.velocity.x < 0.1f) {
             transform.eulerAngles = new Vector3(0, 180, 90);
-            
-        }   
+        } 
 
     }
 

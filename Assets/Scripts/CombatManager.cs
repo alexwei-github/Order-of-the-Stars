@@ -32,7 +32,7 @@ public class CombatManager : MonoBehaviour
     public void Die(){
         OnDie?.Invoke(this);
         if(IsPlayer)
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         else
             StartCoroutine(Death());
             
