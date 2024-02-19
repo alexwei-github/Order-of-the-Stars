@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 10
-  bulletDeathTime: 1
+  bulletDeathTime: 2
+  knockbackAmount: 0
 --- !u!58 &5820741451666842486
 CircleCollider2D:
   m_ObjectHideFlags: 0
