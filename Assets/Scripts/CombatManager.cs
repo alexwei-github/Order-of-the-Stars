@@ -23,16 +23,18 @@ public class CombatManager : MonoBehaviour
 
         OnHealthChange?.Invoke();
 
-        knockback(enemyPos,knockbackAmount);
-
         if(CurHp <= 0)
             Die();
+
+        knockback(enemyPos,knockbackAmount);
     }
 
     public void Die(){
         OnDie?.Invoke(this);
-        //Destroy(gameObject);
-        SceneManager.LoadScene(0);
+        if(IsPlayer)
+            SceneManager.LoadScene(0);
+        else
+            Destroy(gameObject);
     }
 
     public void Heal (int healAmount){
