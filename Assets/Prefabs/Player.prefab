@@ -520,9 +520,9 @@ MonoBehaviour:
   runSound: {fileID: 7852264305103427074}
   jumpSound: {fileID: 8254902562680203621}
   acceleration: 2
-  decceleration: 2
+  decceleration: 2.5
   power: 2
-  jumpForce: 3.5
+  jumpForce: 5
   jumpCutForce: 2
   airRes: 2
   gravityScaleMult: 2

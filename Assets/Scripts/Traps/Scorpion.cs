@@ -11,6 +11,8 @@ public class Scorpion : MonoBehaviour
     private bool canDash = true;
     private float dashCooldown = 0f;
     public float cooldown;
+    private Animator anim;
+    public GameObject spriteanimator;
 
 
     public Transform firepoint;
@@ -24,6 +26,7 @@ public class Scorpion : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = spriteanimator.GetComponent<Animator>();
     }
 
     void Update(){
@@ -33,17 +36,17 @@ public class Scorpion : MonoBehaviour
         else{
             canDash = true;
         }
-        if(Vector2.Distance(player.transform.position,transform.position)<7 && canDash){
+        if(Vector2.Distance(player.transform.position,transform.position) < 10 && canDash){
             canDash = false;
             StartCoroutine(Lunge());
             
         }
 
         if (rb.velocity.x > 0) {
-            transform.eulerAngles = new Vector3(0, 180, 90);
+            transform.eulerAngles = new Vector3(0, 0, 90);
             
         } else if (rb.velocity.x < 0) {
-            transform.eulerAngles = new Vector3(0, 0, 90);
+            transform.eulerAngles = new Vector3(0, 180, 90);
             
         }   
 
@@ -51,13 +54,18 @@ public class Scorpion : MonoBehaviour
 
     IEnumerator Lunge(){
         dashCooldown = cooldown;
+        anim.SetBool("run", true);
         rb.velocity = new Vector2(force * Mathf.Sign( transform.position.x - player.transform.position.x),0f);
         //rb.AddForce(new Vector2(force * Mathf.Sign( transform.position.x - player.transform.position.x), 0f));
         yield return new WaitForSeconds(1f);
+        anim.SetBool("run", false);
+        anim.SetBool("attack", true);
+        Shoot();
         Debug.Log("backed off");
         rb.velocity = new Vector2(0,0);
-        yield return new WaitForSeconds(0.5f);
-        Shoot();
+        yield return new WaitForSeconds(0.1f);
+        anim.SetBool("attack", false);
+        
 
     }
 
