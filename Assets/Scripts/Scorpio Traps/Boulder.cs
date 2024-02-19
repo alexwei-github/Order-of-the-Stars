@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Boulder : MonoBehaviour
 {
+    private Vector2 currentPos;
+    void Awake(){
+        currentPos = transform.position;
+
+    }
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("Player")){
             StartCoroutine(Stop());
