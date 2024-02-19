@@ -47,7 +47,15 @@ public class Scorpion : MonoBehaviour
             
         } else if (rb.velocity.x < 0.1f) {
             transform.eulerAngles = new Vector3(0, 180, 90);
-        } 
+        } else if(rb.velocity == new Vector2(0,0)){
+
+            if(player.transform.position.x > transform.position.x){
+                transform.eulerAngles = new Vector3(0,0,90);
+            }
+            else{
+                transform.eulerAngles = new Vector3(0,0,90);
+            }
+        }
 
     }
 
@@ -60,7 +68,6 @@ public class Scorpion : MonoBehaviour
         anim.SetBool("run", false);
         anim.SetBool("attack", true);
         Shoot();
-        Debug.Log("backed off");
         rb.velocity = new Vector2(0,0);
         yield return new WaitForSeconds(0.1f);
         anim.SetBool("attack", false);

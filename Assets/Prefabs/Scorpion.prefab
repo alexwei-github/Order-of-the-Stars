@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 442580a303738824a9c868989a80b531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 3
-  cooldown: 5
+  force: 5
+  cooldown: 3
   spriteanimator: {fileID: 5502733530790317998}
   firepoint: {fileID: 860644219534414997}
   bullet: {fileID: 2394155744684504185, guid: 0629ff7fa5de83c408396b764cd460e7, type: 3}
