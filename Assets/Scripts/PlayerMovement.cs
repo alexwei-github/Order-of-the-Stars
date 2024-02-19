@@ -61,10 +61,9 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("grounded", IsGrounded());
         }
 
-        //movement audio
+        //running audio
         if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && IsGrounded()){
             runSound.enabled = true;
-            Debug.Log("running");
         }
         else
         {
