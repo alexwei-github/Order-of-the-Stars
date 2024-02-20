@@ -5,7 +5,12 @@ using UnityEngine;
 public class ScorpioTreasure : MonoBehaviour
 {
     private GameObject player;
+    private Animator anim;
 
+
+    void Awake(){
+        anim = GetComponent<Animator>();
+    }
     void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
             StartCoroutine(Bye());
@@ -13,7 +18,8 @@ public class ScorpioTreasure : MonoBehaviour
     }
 
     IEnumerator Bye(){
-        yield return new WaitForSeconds(1f);
+        anim.SetBool("Hit", true);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 }
