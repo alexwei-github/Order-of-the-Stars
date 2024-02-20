@@ -703,8 +703,8 @@ MonoBehaviour:
   targetSpeed: 30
   runSound: {fileID: 7852264305103427074}
   jumpSound: {fileID: 8254902562680203621}
-  acceleration: 2
-  decceleration: 2
+  acceleration: 1
+  decceleration: 2.5
   power: 2
   jumpForce: 5
   jumpCutForce: 2
