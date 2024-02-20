@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6136434635249873440}
   - component: {fileID: 2611691412415012005}
   - component: {fileID: 2949889994734426228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289138520174023557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7676904502186386552}
   - component: {fileID: 3872290937181774177}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite_Bare_Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5646879436220315094}
   - component: {fileID: 5710266708111794123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: characters_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 365101504454751081}
   - component: {fileID: 4131695802035458169}
   - component: {fileID: 8473549754261527162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 8254902562680203621}
   - component: {fileID: 231745692058111799}
   - component: {fileID: 5607940978586177228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

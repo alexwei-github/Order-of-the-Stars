@@ -17,14 +17,21 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackArea = transform.GetChild(0).gameObject;        
+        attackArea = transform.GetChild(0).gameObject;   
+         
+    }
+
+    void Awake(){
+        Input.GetMouseButtonDown(0);
+        attacking = true; 
+        //attacking = false;   
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0)){
-            Attack();
+            StartCoroutine(Attack());
             attackSprite.enabled = true; //reveals attack sprite
         }
         else{
@@ -42,9 +49,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void Attack(){
+    IEnumerator Attack(){
         swordSound.Play();
+        anim.SetBool("attack", true);
         attacking = true;
         attackArea.SetActive(attacking); 
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("attack", false);
     }
 }
