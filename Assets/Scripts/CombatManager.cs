@@ -13,6 +13,7 @@ public class CombatManager : MonoBehaviour
     public int CurHp;
     public int MaxHp;
     public bool IsPlayer;
+    public bool IsBoss;
     public bool canKnockback;
     public Rigidbody2D rb;
     public event UnityAction OnHealthChange;
@@ -32,6 +33,8 @@ public class CombatManager : MonoBehaviour
     public void Die(){
         OnDie?.Invoke(this);
         if(IsPlayer)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        else if(IsBoss)
             SceneManager.LoadScene(1);
         else
             StartCoroutine(Death());
