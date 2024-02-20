@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pegasus : MonoBehaviour
 {
@@ -35,7 +36,8 @@ public class Pegasus : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //PlayerMovement.instance.rb.AddForce(new Vector2(1,0));
         //PlayerMovement.instance.canMove = true;
-
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(1); //brings player back to overworld
         
     }
 }
