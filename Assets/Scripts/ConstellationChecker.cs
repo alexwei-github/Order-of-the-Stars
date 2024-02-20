@@ -28,6 +28,23 @@ public class ConstellationChecker : MonoBehaviour
         if(SceneManager.GetActiveScene().name.Equals("WorldCreate") && Pegasus && Cancer && Scorpio && Gemini){
             SceneManager.LoadScene("TheEnd");
         }
+
+        if(!SceneManager.GetActiveScene().name.Equals("WorldCreate")){
+            switch(SceneManager.GetActiveScene().name){
+            case "Cancer": 
+                Cancer = true;
+                break;
+            case "Pegasus":
+                Pegasus = true;
+                break;
+            case "Scorpio":
+                Scorpio = true;
+                break;
+            case "Gemini":
+                Gemini = true;
+                break;
+        }
+        }
     }
 
 

@@ -41,19 +41,5 @@ public class Statue : MonoBehaviour
 
     public void OnStatueButton(){
         SceneManager.LoadScene(nextLevelName);
-        switch(nextLevelName){
-            case "Cancer": 
-                checker.Cancer = true;
-                break;
-            case "Pegasus":
-                checker.Pegasus = true;
-                break;
-            case "Scorpio":
-                checker.Scorpio = true;
-                break;
-            case "Gemini":
-                checker.Gemini = true;
-                break;
-        }
     }
 }
