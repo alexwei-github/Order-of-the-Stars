@@ -32,7 +32,7 @@ public class Circular : MonoBehaviour
         PlayerMovement.instance.canMove = false;
         PlayerMovement.instance.rb.transform.position = CheckPointManager.instance.checkPointPos;
         PlayerMovement.instance.rb.velocity = new Vector2(0,0);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.2f);
         PlayerMovement.instance.canMove = true;
     }
 }

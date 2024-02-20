@@ -26099,6 +26099,10 @@ PrefabInstance:
       propertyPath: sr
       value: 
       objectReference: {fileID: 532331680}
+    - target: {fileID: 1528818183518178627, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
+      propertyPath: coyoteTime
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3883569193327231485, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.5

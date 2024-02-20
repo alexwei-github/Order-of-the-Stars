@@ -711,6 +711,7 @@ MonoBehaviour:
   airRes: 2
   gravityScaleMult: 2
   canMove: 1
+  coyoteTime: 1
 --- !u!70 &1561295688792894854
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

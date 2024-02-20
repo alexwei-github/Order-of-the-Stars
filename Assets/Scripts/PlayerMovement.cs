@@ -32,6 +32,10 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     public bool canMove = true; 
 
+    //private float lastGroundedTime;
+    //private float lastJumpTime;
+    public float coyoteTime;
+
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         gravityScale = rb.gravityScale;
@@ -48,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Update(){
+        
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
@@ -66,6 +71,13 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("run", false);
             anim.SetBool("grounded", true);
         }
+            
+            if(IsGrounded()){
+            lastGroundedTime = coyoteTime;
+            }
+        else if(IsGrounded()){
+            lastGroundedTime -= Time.deltaTime;
+        }
 
         //running audio
         if((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && IsGrounded()){
@@ -78,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate(){
+        
 
         float targetSpeed = moveInput.x * moveSpeed;
         float speedDifference = targetSpeed - rb.velocity.x;
@@ -91,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
         //slows you down in air
         if(canMove){
             sr.color = new Color(1f,1f,1f,1f);
+
         if(IsGrounded()){
             rb.AddForce(movement * Vector2.right);
         }
@@ -101,14 +115,17 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-
-        if(IsGrounded() && moveInput.y > 0.1f) 
+            //IsGrounded() && 
+        if(moveInput.y > 0.1f && lastGroundedTime > 0) 
         {
+            lastGroundedTime = 0;
             Jump();
         }
         //jump determined by how long you hold up
         if(rb.velocity.y > 0 && moveInput.y < 0.1f){
+            lastGroundedTime = 0;
             jumpCut();
+            
         }
         //makes gravity bigger when u fall
         if( rb.velocity.y < 0){
