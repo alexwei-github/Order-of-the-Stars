@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!212 &318323807 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5710266708111794123, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-  m_PrefabInstance: {fileID: 3628930417264053670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &326618311 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4837186046052126001, guid: 04bb41393d06fe24787ac31482b95941, type: 3}
@@ -762,11 +757,6 @@ Transform:
   - {fileID: 571004987}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2140494791 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2611691412415012005, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-  m_PrefabInstance: {fileID: 3628930417264053670}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3297628719047911145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,73 +830,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 231745692058111799, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 2140494791}
     - target: {fileID: 289138520174023557, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 1528818183518178627, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 318323807}
-    - target: {fileID: 1528818183518178627, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: decceleration
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611691412415012005, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2611691412415012005, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 5c77c9f1bf60a1d4ca36358071ad119b, type: 2}
     - target: {fileID: 2949889994734426228, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3878084
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.45839643
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8857638
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.97846264
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.000000002827504
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.000000046356153
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.2064242
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325449527330739492, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -23.826
       objectReference: {fileID: 0}
     - target: {fileID: 3883569193327231485, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_LocalPosition.x
@@ -959,34 +889,6 @@ PrefabInstance:
     - target: {fileID: 7130188809984551059, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_Layer
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141829370240854424, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8468818367053590139, guid: 8a5709998e3119d4db6d01d7561ee150, type: 3}
       propertyPath: m_Name
