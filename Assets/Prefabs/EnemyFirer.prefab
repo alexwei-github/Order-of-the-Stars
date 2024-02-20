@@ -211,4 +211,4 @@ MonoBehaviour:
   bullet: {fileID: 2845921628051127591, guid: 11f98468cbb6ab3499bd91e272371157, type: 3}
   fireRate: 5
   damage: 5
-  cooldown: 2
+  cooldown: 1.5
