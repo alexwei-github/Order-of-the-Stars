@@ -22,7 +22,9 @@ public class ConstellationChecker : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
 
+    void Update(){
         if(SceneManager.GetActiveScene().name.Equals("WorldCreate") && Pegasus && Cancer && Scorpio && Gemini){
             SceneManager.LoadScene("TheEnd");
         }
