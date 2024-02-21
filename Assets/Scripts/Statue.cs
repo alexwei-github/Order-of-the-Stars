@@ -32,6 +32,12 @@ public class Statue : MonoBehaviour
         else if(nextLevelName.Equals("Gemini") && !checker.Gemini){
             button.SetActive(true);
         }
+        else if(nextLevelName.Equals("Capricorn") && !checker.Capricorn){
+            button.SetActive(true);
+        }
+        else{
+            SceneManager.LoadScene(nextLevelName);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)

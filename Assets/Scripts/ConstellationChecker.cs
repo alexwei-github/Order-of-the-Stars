@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class ConstellationChecker : MonoBehaviour
 {
     public static ConstellationChecker Instance;
+    
+    public GameObject theEnd;
 
-    public bool Pegasus, Cancer, Scorpio, Gemini;
+    public bool Pegasus, Cancer, Scorpio, Gemini, Capricorn;
 
 
     private void Awake()
@@ -25,8 +27,10 @@ public class ConstellationChecker : MonoBehaviour
     }
 
     void Update(){
-        if(SceneManager.GetActiveScene().name.Equals("WorldCreate") && Pegasus && Cancer && Scorpio && Gemini){
-            SceneManager.LoadScene("TheEnd");
+        if(SceneManager.GetActiveScene().name.Equals("WorldCreate") && Pegasus && Cancer && Scorpio && Gemini && Capricorn){
+            theEnd = GameObject.FindGameObjectWithTag("TheEnd");
+            theEnd.GetComponent<CircleCollider2D>().enabled = true;
+            theEnd.GetComponent<SpriteRenderer>().enabled = true;
         }
 
         if(!SceneManager.GetActiveScene().name.Equals("WorldCreate")){
@@ -42,6 +46,9 @@ public class ConstellationChecker : MonoBehaviour
                 break;
             case "Gemini":
                 Gemini = true;
+                break;
+            case "Capricorn":
+                Capricorn = true;
                 break;
         }
         }

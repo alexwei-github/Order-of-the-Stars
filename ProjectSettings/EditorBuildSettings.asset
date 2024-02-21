@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Pegasus.unity
     guid: e8766fa0d3602934fa55a94baccb5853
   - enabled: 1
+    path: Assets/Scenes/Capricorn.unity
+    guid: 07dae4263897465439119013dc57aaa6
+  - enabled: 1
     path: Assets/Scenes/TheEnd.unity
     guid: 93a47b47b39ecfb45b95973b468ce0ec
   m_configObjects: {}

@@ -32,6 +32,11 @@ public class ConstellationAppear : MonoBehaviour
                     sprite.enabled = true;
                 }
                 break;
+            case "Capricorn":
+                if(checker.Capricorn){
+                    sprite.enabled = true;
+                }
+                break;
         }
     }
 }

@@ -14,6 +14,7 @@ public class TheEnd : MonoBehaviour
         checker.Gemini = false;
         checker.Pegasus = false;
         checker.Scorpio = false;
+        checker.Capricorn = false;
     }
     // Update is called once per frame
     void Update()
