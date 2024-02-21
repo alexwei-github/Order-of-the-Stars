@@ -35,7 +35,7 @@ public class Statue : MonoBehaviour
         else if(nextLevelName.Equals("Capricorn") && !checker.Capricorn){
             button.SetActive(true);
         }
-        else{
+        else if(nextLevelName.Equals("TheEnd")){
             SceneManager.LoadScene(nextLevelName);
         }
     }
